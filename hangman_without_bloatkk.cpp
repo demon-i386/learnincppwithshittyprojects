@@ -1,35 +1,21 @@
-
-// a hangman without bloat (only 1 letter and word)
-
-
 #include <iostream>
-#include <stdlib.h>
-#include <fstream>
-#include <limits.h>
-#include <string.h>
-#include <curlpp/cURLpp.hpp>
-#include <curlpp/Options.hpp>
 
-using namespace std;
-std::string word= "aviao";
+int main() {
+	unsigned int	x{ 0 };
+	std::string	word("aviao");
+	char		letter;
 
-char letter[0];
-int error;
+	std::cout << "letter: ";
+	std::cin >> letter;
 
-int main(int argc, char *argv[]){
-	cout << "letter?????????12221: ";
-	cin >> letter;
-
-
-	for(int x = 0; x < strlen(word.c_str()); x++){
-		if(word.at(x) == letter[0]){
-			cout << "wow ur a god in this game lmao ur really god, want a medal?: " << word[x] << endl;
-			break;
+	for (int x = 0; x < word.size(); x++) {
+		if (word.at(x) == letter) {
+			std::cout << "wow ur a god in this game lmao ur really god, want a medal?: " << std::endl;
+			return 0;
 		}
-		else{
-			cout << "lmao ur n00b fuckoff please: " <<  letter[0] << endl;
-			error+=1;
-			break;
+		else {
+			continue;
 		}
 	}
+	std::cout << "lmao ur n00b fuckoff please" << std::endl;
 }
